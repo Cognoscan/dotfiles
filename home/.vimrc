@@ -11,6 +11,9 @@ filetype indent on
 " Auto-reload file when it is changed
 "set autoread
 
+" Show line numbers
+set number
+
 " Always display location
 set ruler
 
@@ -50,7 +53,7 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+
 set background=dark
 
 if has("gui_running")
@@ -93,3 +96,4 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 
+colorscheme inkpot

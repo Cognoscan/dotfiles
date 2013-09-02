@@ -1,0 +1,21 @@
+# Conky, a system monitor, based on torsmo
+
+out_to_x no
+out_to_console yes
+out_to_stderr no
+background no
+cpu_avg_samples 4
+update_interval 1
+total_run_times 0
+use_spacer left
+pad_percents 3
+
+TEXT
+# Battery
+$color0 BATT: $color1 ${battery_short} \
+# Volume
+| VOL: ${mixer pcm}% ${if_mixer_mute pcm}M${endif} \
+# Comptuer Stats
+| CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlan1}%  D-${downspeed wlan1} U-${upspeed wlan1}\
+# Time
+| ${time %T %y-%b-%d}
