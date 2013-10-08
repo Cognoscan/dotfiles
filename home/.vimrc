@@ -86,6 +86,8 @@ set ai "Autoindent
 set si "Smartindent
 set wrap "Wrap lines
 
+set tw=80
+set formatoptions+=w
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode related
@@ -97,3 +99,7 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 colorscheme inkpot
+
+
+" Run Pathogen
+execute pathogen#infect()
