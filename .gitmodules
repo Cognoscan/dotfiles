@@ -1,9 +1,0 @@
-[submodule "vim-markdown"]
-	path = vim-markdown
-	url = https://www.github.com/Cognoscan/vim-markdown.git
-[submodule "vim-vhdl"]
-	path = vim-vhdl
-	url = https://www.github.com/Cognoscan/vim-vhdl.git
-[submodule "tabular"]
-	path = tabular
-	url = https://www.github.com/godlygeek/tabular.git
