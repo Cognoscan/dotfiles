@@ -1,9 +1,9 @@
 [submodule "home/.vim/bundle/tabular"]
 	path = home/.vim/bundle/tabular
-	url = https://www.github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
 [submodule "home/.vim/bundle/vim-vhdl"]
 	path = home/.vim/bundle/vim-vhdl
-	url = https://www.github.com/Cognoscan/vim-vhdl.git
+	url = https://github.com/Cognoscan/vim-vhdl.git
 [submodule "home/.vim/bundle/vim-markdown"]
 	path = home/.vim/bundle/vim-markdown
-	url = https://www.github.com/Cognoscan/vim-markdown.git
+	url = https://github.com/Cognoscan/vim-markdown.git
