@@ -2,6 +2,18 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Run unique startup script
+if [ -f ~/.bash_unique ]; then
+  source ~/.bash_unique
+fi
+
+# Add local programs to PATH if directory exists
+if [ -d ~/programs ]; then
+  PATH=$PATH:~/programs
+  export PATH
+fi
+
+# Force to xterm-256color
 if [ "$TERM" == "xterm" ]; then
   export TERM=xterm-256color
 fi
@@ -110,10 +122,6 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi

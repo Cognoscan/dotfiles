@@ -1,4 +1,11 @@
-XTerm*faceName: Monospace
-XTerm*faceSize: 10
-UXTerm*faceName: Monospace
-UXTerm*faceSize: 10
+*customization: -color
+xterm*termName: xterm-256color
+xterm*faceName: Monospace
+xterm*faceSize: 10
+xterm*foreground: rgb:00/FF/00
+xterm*background: rgb:00/00/00
+
+uxterm*faceName: Monospace
+uxterm*faceSize: 10
+uxterm*foreground: rgb:00/FF/00
+uxterm*background: rgb:00/00/00

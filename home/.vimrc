@@ -2,6 +2,9 @@
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Manipulate paths to load plugins
+execute pathogen#infect()
+
 set history=700
 
 " Enable filetype plugins
@@ -86,8 +89,8 @@ set ai "Autoindent
 set si "Smartindent
 set wrap "Wrap lines
 
-set tw=80
 set formatoptions+=w
+set tw=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode related
@@ -100,6 +103,10 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 
 colorscheme inkpot
 
-
 " Run Pathogen
 execute pathogen#infect()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File-specific nonsense
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
