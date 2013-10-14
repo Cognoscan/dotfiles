@@ -1,11 +1,11 @@
 *customization: -color
 xterm*termName: xterm-256color
-xterm*faceName: Monospace
-xterm*faceSize: 10
-xterm*foreground: rgb:00/FF/00
+xterm*faceName: Inconsolata
+xterm*faceSize: 12
+xterm*foreground: rgb:FF/FF/FF
 xterm*background: rgb:00/00/00
 
-uxterm*faceName: Monospace
-uxterm*faceSize: 10
-uxterm*foreground: rgb:00/FF/00
+uxterm*faceName: Inconsolata
+uxterm*faceSize: 12
+uxterm*foreground: rgb:FF/FF/FF
 uxterm*background: rgb:00/00/00

@@ -2,6 +2,11 @@
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Stuff about 
+"setlocal makeprg=vlib\ work\;\ MODELSIM=$HOME/modelsim.ini\ vcom\ %
+"setlocal errorformat=**\ Error:\ %f(%l):\ %m 
+"
+"
 " Manipulate paths to load plugins
 execute pathogen#infect()
 
@@ -107,6 +112,27 @@ colorscheme inkpot
 execute pathogen#infect()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" File-specific nonsense
+" Leader Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let mapleader=","
+
+" Toggle NERDTree with <leader>n
+map <leader>n :NERDTreeToggle<CR>
+" Toggle Taglist with <leader>t
+map <leader>t  :TlistToggle<CR>
+
+" navigate splits with <leader>[hjkl]
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin-specific stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Start NERDTree if no file was specified
+autocmd vimenter * if !argc() | NERDTree | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
