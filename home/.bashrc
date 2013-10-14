@@ -8,8 +8,8 @@ if [ -f ~/.bash_unique ]; then
 fi
 
 # Add local programs to PATH if directory exists
-if [ -d ~/programs ]; then
-  PATH=$PATH:~/programs
+if [ -d ~/bin ]; then
+  PATH=~/bin:$PATH
   export PATH
 fi
 
