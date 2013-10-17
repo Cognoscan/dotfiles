@@ -13,6 +13,12 @@ if [ -d ~/bin ]; then
   export PATH
 fi
 
+# Add local man pages to MANPATH is directory exists
+if [ -d ~/share/man ]; then
+  MANPATH=~/share/man:$MANPATH
+  export MANPATH
+fi
+
 # Force to xterm-256color
 if [ "$TERM" == "xterm" ]; then
   export TERM=xterm-256color
