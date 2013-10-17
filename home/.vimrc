@@ -132,7 +132,14 @@ map <leader>l :wincmd l<CR>
 " Plugin-specific stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+" Taglist custom VHDL settings line
+let tlist_vhdl_settings = 'vhdl;d:package;b:packagebody;a:architecture;e:entity;p:process;f:function;P:procedure;t:type;c:constant;s:signal;i:instance'
+
+
 " Start NERDTree if no file was specified
 autocmd vimenter * if !argc() | NERDTree | endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
