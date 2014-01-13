@@ -128,6 +128,12 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
+" update with make
+map <leader>u :w <bar> !make <CR>
+
+" compile with multimarkdown
+map <leader>m :w <bar> !multimarkdown -b %:t<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin-specific stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
