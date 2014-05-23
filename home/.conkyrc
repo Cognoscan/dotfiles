@@ -16,6 +16,6 @@ $color0 BATT: $color1 ${battery_short} \
 # Volume
 | VOL: ${mixer pcm}% ${if_mixer_mute pcm}M${endif} \
 # Comptuer Stats
-| CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlan1}%  D-${downspeed wlan1} U-${upspeed wlan1}\
+| CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlp2s0}%  D-${downspeed wlp2s0} U-${upspeed wlp2s0}\
 # Time
 | ${time %T %y-%b-%d}
