@@ -86,9 +86,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# Old Prompt, for reference to 256 color setting
+# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;208m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 if [ "$color_prompt" = 256 ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;38;5;208m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;44;37m\]\u@\h \[\033[40;34m\]\['"`tput sc`"'\] \['"`tput rc`"'\]\[\033[01;40;37m\]\w \[\033[00;30m\]\['"`tput sc`"'\] \['"`tput rc`"'\]\[\033[0m\] '
 elif [ "$color_prompt" = 16 ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -105,6 +107,7 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -145,3 +148,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#source /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh

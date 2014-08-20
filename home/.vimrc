@@ -67,7 +67,6 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-
 set background=dark
 
 if has("gui_running")
@@ -111,7 +110,6 @@ vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
-
 colorscheme default
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,12 +149,11 @@ nmap sl <Plug>(easymotion-lineforward)
 nmap ss <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
-
 " update with make
-" map <leader>u :w <bar> !make <CR>
+"map <leader>u :w <bar> !make <CR>
 
 " compile with multimarkdown
-" map <leader>m :w <bar> !multimarkdown -b %:t<CR>
+"map <leader>m :w <bar> !multimarkdown -b %:t<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin-specific stuff
