@@ -14,6 +14,7 @@ TEXT
 # Battery
 $color0 BATT: $color1 ${battery_short} \
 # Volume
+# VOL: ${execpi 500 pactl list sinks | grep "Volume: 0" | cut -d " " -f4 }
 | VOL: ${mixer pcm}% ${if_mixer_mute pcm}M${endif} \
 # Comptuer Stats
 | CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlp2s0}%  D-${downspeed wlp2s0} U-${upspeed wlp2s0}\

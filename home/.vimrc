@@ -7,8 +7,14 @@
 "setlocal errorformat=**\ Error:\ %f(%l):\ %m 
 "
 "
+
+" Turn off backup files, which clutter things up in Windows
+set nobackup
+set nowritebackup
 " Manipulate paths to load plugins
-execute pathogen#infect()
+call pathogen#infect()
+Helptags
+
 
 set history=700
 
@@ -106,13 +112,10 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 
-colorscheme inkpot
-
-" Run Pathogen
-execute pathogen#infect()
+colorscheme default
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Leader Mappings
+" Key Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader=","
@@ -128,16 +131,47 @@ map <leader>j :wincmd j<CR>
 map <leader>k :wincmd k<CR>
 map <leader>l :wincmd l<CR>
 
+" Buffer navigation
+map <leader>u :bnext<CR> 
+map <leader>i :bprevious<CR> 
+map <leader>bn :enew<CR>
+map <leader>bc :bp <BAR> bd #<CR>
+map <leader>bl :ls<CR>
+
+nnoremap ; :
+
+"nmap <space> i<space><Esc>l
+"nmap <CR> o<Esc>
+
+nmap sh <Plug>(easymotion-linebackward)
+nmap sj <Plug>(easymotion-j)
+nmap sk <Plug>(easymotion-k)
+nmap sl <Plug>(easymotion-lineforward)
+
+nmap ss <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
+
+
 " update with make
-map <leader>u :w <bar> !make <CR>
+" map <leader>u :w <bar> !make <CR>
 
 " compile with multimarkdown
-map <leader>m :w <bar> !multimarkdown -b %:t<CR>
+" map <leader>m :w <bar> !multimarkdown -b %:t<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin-specific stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Easymotion Settings
+let g:EasyMotion_smartcase = 1
+
+" Supertab Settings
+let g:SupertabNoCompleteAfter = ['^', '\s', '\W']
+
+" Airline Settings
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Taglist custom VHDL settings line
 let tlist_vhdl_settings = 'vhdl;d:package;b:packagebody;a:architecture;e:entity;p:process;f:function;P:procedure;t:type;c:constant;s:signal;i:instance'

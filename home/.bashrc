@@ -145,4 +145,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias ls='ls --color=auto --group-directories-first'

@@ -14,6 +14,8 @@ alias up9='cd ../../../../../../../../..'
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
 
+source ~/.homesick/repos/homeshick/homeshick.sh
+
 function pdfpextr()
 {
     # this function uses 3 arguments:
