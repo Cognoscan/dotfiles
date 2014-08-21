@@ -1,0 +1,27 @@
+"3.8.2 (created: 2014/02/13 23:52:43)
+
+source! "C:\\Users\\Scott.Teal\\_vimperatorrc.local"
+
+colorscheme darkness2
+
+let mapleader = ","
+
+nnoremap j 5j
+nnoremap k 5k
+
+nmap <S-j> gt
+nmap <S-k> gT
+nmap <S-o> t
+
+nmap <C-p> :emenu File.Print…<CR>
+inoremap <C-a> <Ins><C-A><Ins>
+
+nmap <Leader>m :set toolbars=invmenu<CR>
+nmap <Leader>t :set toolbars=invtabs<CR>
+nmap <Leader>b :set toolbars=invbookmarks<CR>
+nmap <Leader>n :set toolbars=none<CR>
+nmap <leader>r :bmark -f TOOLBAR/ReadLater <CR>
+nmap <leader>e :delbmark<CR>
+
+
+" vim: set ft=vimperator:
