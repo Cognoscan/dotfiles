@@ -12,11 +12,18 @@ pad_percents 3
 
 TEXT
 # Battery
-$color0 BATT: $color1 ${battery_short} \
+#$color0 BATT: $color1 ${battery_short} \
 # Volume
 # VOL: ${execpi 500 pactl list sinks | grep "Volume: 0" | cut -d " " -f4 }
-| VOL: ${mixer pcm}% ${if_mixer_mute pcm}M${endif} \
+#| VOL: ${mixer pcm}% ${if_mixer_mute pcm}M${endif} \
 # Comptuer Stats
-| CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlp2s0}%  D-${downspeed wlp2s0} U-${upspeed wlp2s0}\
+#| CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlp2s0}%  D-${downspeed wlp2s0} U-${upspeed wlp2s0}\
 # Time
-| ${time %T %y-%b-%d}
+#| ${time %T %y-%b-%d}
+
+| ${if_match ${battery_percent}<10}\u2b69${else}${if_match ${battery_percent}<30}\u2b6A${else}${if_match ${battery_percent}<60}\u2b6b${else}\u2b68${endif}${endif}${endif} ${battery_short} \
+| \u2b6f ${execpi 2 ~/scripts/getvolume.sh} \
+| \u2b65 ${if_match ${cpu cpu0}>80}<span fgcolor="red">${else}<span fgcolor="green">${endif}${cpu cpu0}</span> \
+| \u2b65 ${if_match ${memperc}>80}<span fgcolor="red">${else}<span fgcolor="green">${endif}$mem</span> \
+| W ${wireless_link_qual_perc wlp2s0}% \u25bc${downspeed wlp2s0} \u25b2${upspeed wlp2s0} \
+| \u2b67 ${time %T %Y-%m-%d}

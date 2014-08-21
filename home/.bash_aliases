@@ -1,6 +1,5 @@
 #!/bin/bash
 
-alias homeshick='~/.homesick/repos/homeshick/home/.homeshick'
 alias cu='cd ..'
 alias up='cd ..'
 alias up2='cd ../..'
