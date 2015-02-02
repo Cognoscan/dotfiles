@@ -8,6 +8,7 @@ let mapleader = ","
 
 nnoremap j 5j
 nnoremap k 5k
+nnoremap ; :
 
 nmap <S-j> gt
 nmap <S-k> gT

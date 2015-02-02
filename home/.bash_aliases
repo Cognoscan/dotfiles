@@ -1,5 +1,8 @@
 #!/bin/bash
 
+alias feh2='feh *.{jpg,png,gif}'
+
+alias dl='du -ch --max-depth=1'
 alias cu='cd ..'
 alias up='cd ..'
 alias up2='cd ../..'
@@ -15,6 +18,26 @@ alias ll='ls --color=auto -lh'
 
 source ~/.homesick/repos/homeshick/homeshick.sh
 
+function displayattach()
+{
+  xrandr --output LVDS1 --auto \
+         --output VGA1 --auto --left-of LVDS1 \
+         --output DVI-1-${1} --auto --right-of LVDS1
+}
+
+function displaydetach()
+{
+  xrandr --output LVDS1 --auto \
+         --output VGA1 --off \
+         --output DVI-1-${1} --off
+}
+
+function md5sumdir()
+{
+    find "${1}" -type f -exec md5sum {} + | sort | md5sum
+    #| awk '{print $1}' | sort | md5sumdir
+}
+
 function pdfpextr()
 {
     # this function uses 3 arguments:
@@ -25,8 +48,8 @@ function pdfpextr()
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
        -dFirstPage=${1} \
        -dLastPage=${2} \
-       -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
-       ${3}
+       -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" \
+       "${3}"
 }
 
 function pdfcombine()

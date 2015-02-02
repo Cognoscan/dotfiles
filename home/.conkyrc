@@ -7,23 +7,19 @@ background no
 cpu_avg_samples 4
 update_interval 1
 total_run_times 0
-use_spacer left
+use_spacer right
 pad_percents 3
 
-TEXT
-# Battery
-#$color0 BATT: $color1 ${battery_short} \
-# Volume
-# VOL: ${execpi 500 pactl list sinks | grep "Volume: 0" | cut -d " " -f4 }
-#| VOL: ${mixer pcm}% ${if_mixer_mute pcm}M${endif} \
-# Comptuer Stats
-#| CPU:${cpu cpu0}%  MEM:$mem  NET:${wireless_link_qual_perc wlp2s0}%  D-${downspeed wlp2s0} U-${upspeed wlp2s0}\
-# Time
-#| ${time %T %y-%b-%d}
+mpd_host 127.0.0.1
+mpd_port 6600
 
-| ${if_match ${battery_percent}<10}\u2b69${else}${if_match ${battery_percent}<30}\u2b6A${else}${if_match ${battery_percent}<60}\u2b6b${else}\u2b68${endif}${endif}${endif} ${battery_short} \
-| \u2b6f ${execpi 2 ~/scripts/getvolume.sh} \
-| \u2b65 ${if_match ${cpu cpu0}>80}<span fgcolor="red">${else}<span fgcolor="green">${endif}${cpu cpu0}</span> \
-| \u2b65 ${if_match ${memperc}>80}<span fgcolor="red">${else}<span fgcolor="green">${endif}$mem</span> \
-| W ${wireless_link_qual_perc wlp2s0}% \u25bc${downspeed wlp2s0} \u25b2${upspeed wlp2s0} \
-| \u2b67 ${time %T %Y-%m-%d}
+
+TEXT
+  ${mpd_smart 100}| \
+${if_match ${battery_percent}<10}<span fgcolor="red"></span>${else}${if_match ${battery_percent}<40}${else}${if_match ${battery_percent}<70}${else}${endif}${endif}${endif} ${battery_short} ${battery_time} \
+ ${execpi 2 ponymix get-volume} \
+ ${if_match ${cpu cpu0}>70}<span fgcolor="red">${else}<span fgcolor="Lime">${endif}${cpu cpu0}</span> \
+ ${if_match ${memperc}>80}<span fgcolor="red">${else}<span fgcolor="Lime">${endif}$mem</span> \
+ ${wireless_link_qual_perc wlp2s0} ${downspeed wlp2s0} ${upspeed wlp2s0} \
+ ${time %T %Y-%m-%d %a}
+

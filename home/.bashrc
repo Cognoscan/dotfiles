@@ -21,7 +21,8 @@ fi
 
 # Force to xterm-256color
 if [ "$TERM" == "xterm" ]; then
-  export TERM=xterm-256color
+  #export TERM=xterm-256color
+  export TERM=screen
 fi
 
 # If not running interactively, don't do anything
@@ -125,6 +126,8 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias mv='mv -i'
+alias cp='cp -i'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
