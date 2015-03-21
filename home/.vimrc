@@ -139,6 +139,7 @@ map <leader>bc :bp <BAR> bd #<CR>
 map <leader>bl :ls<CR>
 
 nnoremap ; :
+vnoremap ; :
 
 "nmap <space> i<space><Esc>l
 "nmap <CR> o<Esc>
