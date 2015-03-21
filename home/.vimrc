@@ -95,6 +95,10 @@ set smarttab
 
 set shiftwidth=2
 set tabstop=2
+" Special for Verilog: Kollmorgen coding standard is to use 4 spaces / tab
+au BufEnter *.v  setlocal tabstop=4
+au BufEnter *.v  setlocal shiftwidth=4
+
 
 
 set ai "Autoindent
@@ -103,6 +107,9 @@ set wrap "Wrap lines
 
 set formatoptions+=w
 set tw=80
+" Special for Verilog: Kollmorgen coding standard doesn't really fit to 80 
+" characters per line. Let's try 110
+au BufEnter *.v  setlocal tw=110
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode related
@@ -152,6 +159,12 @@ nmap sl <Plug>(easymotion-lineforward)
 nmap ss <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
+" Useful Visual mode shortcuts for Verilog
+au BufEnter *.v vmap <leader>d :s#^\(\s\+\)\(input\\|output\)\s\+\(wire\\|reg\)\s\+#\1.#g<CR>
+au BufEnter *.v vmap <leader>f :s#\(\[[0-9:]\+\]\) \(\w\+,\? \+\)///< #\2///< \1 #g<CR>
+au BufEnter *.v vmap <leader>c :Tabularize ////<<CR>
+au BufEnter *.v vmap <leader>e :Tabularize /<=<CR>
+
 " update with make
 "map <leader>u :w <bar> !make <CR>
 
@@ -161,6 +174,11 @@ nmap t <Plug>(easymotion-t2)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin-specific stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Indent-Guides Settings
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 
 " Easymotion Settings
 let g:EasyMotion_smartcase = 1
@@ -175,7 +193,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Taglist custom VHDL settings line
 let tlist_vhdl_settings = 'vhdl;d:package;b:packagebody;a:architecture;e:entity;p:process;f:function;P:procedure;t:type;c:constant;s:signal;i:instance'
-
 
 " Start NERDTree if no file was specified
 autocmd vimenter * if !argc() | NERDTree | endif
