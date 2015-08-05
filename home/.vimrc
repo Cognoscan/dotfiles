@@ -10,6 +10,9 @@ let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 "
 "
 
+" Global clipboard
+set clipboard=unnamed
+
 " Turn off backup files, which clutter things up in Windows
 set nobackup
 set nowritebackup

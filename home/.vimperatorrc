@@ -8,7 +8,7 @@ let mapleader = ","
 
 nnoremap j 5j
 nnoremap k 5k
-nnoremap ; :
+"nnoremap ; :
 
 nmap <S-j> gt
 nmap <S-k> gT
@@ -17,9 +17,11 @@ nmap <S-o> t
 nmap <C-p> :emenu File.Print…<CR>
 inoremap <C-a> <Ins><C-A><Ins>
 
+nmap <Leader>. :noh<CR>
 nmap <Leader>m :set toolbars=invmenu<CR>
 nmap <Leader>t :set toolbars=invtabs<CR>
 nmap <Leader>b :set toolbars=invbookmarks<CR>
+nmap <Leader>g :set toolbars=invnavigation<CR>
 nmap <Leader>n :set toolbars=none<CR>
 nmap <leader>r :bmark -f TOOLBAR/ReadLater <CR>
 nmap <leader>e :delbmark<CR>
