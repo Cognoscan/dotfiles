@@ -59,6 +59,6 @@ function pdfcombine()
     #   $2 is the second input file
     #   $3 is the output file name
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
-       -sOutputFile=${3} ${1} ${2}
+       -sOutputFile="${3}" "${1}" "${2}"
 }
 

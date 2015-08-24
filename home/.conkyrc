@@ -1,23 +1,20 @@
-conky.config = {
--- Conky, a system monitor, based on torsmo
+# Conky, a system monitor, based on torsmo
 
-	out_to_x = false,
-	out_to_console = true,
-	out_to_stderr = false,
-	background = false,
-	cpu_avg_samples = 4,
-	update_interval = 1,
-	total_run_times = 0,
-	use_spacer = 'right',
-	pad_percents = 3,
+out_to_x no
+out_to_console yes
+out_to_stderr no
+background no
+cpu_avg_samples 4
+update_interval 1
+total_run_times 0
+use_spacer right
+pad_percents 3
 
-	mpd_host = '127.0.0.1',
-	mpd_port = 6600,
+mpd_host 127.0.0.1
+mpd_port 6600
 
 
-};
-
-conky.text = [[
+TEXT
   ${mpd_smart 100}| \
 ${if_match ${battery_percent}<10}<span fgcolor="red"></span>${else}${if_match ${battery_percent}<40}${else}${if_match ${battery_percent}<70}${else}${endif}${endif}${endif} ${battery_short} ${battery_time} \
  ${execpi 2 ponymix get-volume} \
@@ -26,4 +23,3 @@ ${if_match ${battery_percent}<10}<span fgcolor="red"></span>${else}${if_match
  ${wireless_link_qual_perc wlp2s0} ${downspeed wlp2s0} ${upspeed wlp2s0} \
  ${time %T %Y-%m-%d %a}
 
-]];

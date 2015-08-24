@@ -1,0 +1,27 @@
+! dkeg 2014
+! blushsh
+
+*customization: -color
+
+xterm*background: #17181a
+xterm*foreground: #abacae
+xterm*cursorColor: #abacae
+
+xterm*color0: #17181a
+xterm*color1: #983327
+xterm*color2: #284f28
+xterm*color3: #a36028
+xterm*color4: #3c3c49
+xterm*color5: #ffffff
+xterm*color6: #3d4b58
+xterm*color7: #9a9a9a
+xterm*color8: #3a3a3a
+xterm*color9: #a3443a
+xterm*color10: #526130
+xterm*color11: #a9854f
+xterm*color12: #97979c
+xterm*color13: #d3d3d3
+xterm*color14: #425b62
+xterm*color15: #dddddd
+
+

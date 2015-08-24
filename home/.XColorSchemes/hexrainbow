@@ -1,0 +1,22 @@
+*customization: -color
+
+! HexRainbow theme
+xterm*background: #131313
+xterm*foreground: #C5C8C6
+xterm*cursorColor: #C5C8C6
+xterm*color0: #282A2E
+xterm*color1: #A54242
+xterm*color2: #8C9440
+xterm*color3: #DE935F
+xterm*color4: #5F819D
+xterm*color5: #85678F
+xterm*color6: #5E8D87
+xterm*color7: #707880
+xterm*color8: #373B41
+xterm*color9: #CC6666
+xterm*color10: #B5BD68
+xterm*color11: #F0C674
+xterm*color12: #81A2BE
+xterm*color13: #B294BB
+xterm*color14: #8ABEB7
+xterm*color15: #C5C8C6
