@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Needed for some build scripts
+export SHELL=bash
+
 # Run unique startup script
 if [ -f ~/.bash_unique ]; then
   source ~/.bash_unique
