@@ -61,6 +61,9 @@ set magic
 " Show matching brackets
 set showmatch
 
+" ignore case when completing file names
+set wildignorecase
+
 " No annoying sounds on error
 set noerrorbells
 set novisualbell
@@ -172,13 +175,13 @@ nmap t <Plug>(easymotion-t2)
 
 " Useful Visual mode shortcuts for Verilog
 au BufEnter *.v vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\)*\s*#\1.#g<CR>
-au BufEnter *.v vmap <leader>f :s#\(\[[0-9:]\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
+au BufEnter *.v vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
 au BufEnter *.v vmap <leader>c :Tabularize ////<<CR>
 au BufEnter *.v vmap <leader>e :Tabularize /<=<CR>
 au BufEnter *.v vmap <leader>r :Tabularize /=<CR>
 " Repeat for System Verilog
 au BufEnter *.sv vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\)*\s*#\1.#g<CR>
-au BufEnter *.sv vmap <leader>f :s#\(\[[0-9:]\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
+au BufEnter *.sv vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
 au BufEnter *.sv vmap <leader>c :Tabularize ////<<CR>
 au BufEnter *.sv vmap <leader>e :Tabularize /<=<CR>
 au BufEnter *.sv vmap <leader>r :Tabularize /=<CR>
