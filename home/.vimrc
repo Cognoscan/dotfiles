@@ -1,3 +1,7 @@
+"Define which computer we're on
+let computer="work"
+"let computer="home"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,13 +106,19 @@ set smarttab
 
 set shiftwidth=2
 set tabstop=2
-" Special for Verilog: Kollmorgen coding standard is to use 4 spaces / tab
+" Special for Verilog: Work coding standard is to use 4 spaces / tab
 au BufEnter *.v  setlocal tabstop=4
 au BufEnter *.v  setlocal shiftwidth=4
 au BufEnter *.sv  setlocal tabstop=4
 au BufEnter *.sv  setlocal shiftwidth=4
 
-
+if computer == "work"
+  " Special for C++: Work coding standard is to use 3 spaces / tab
+  au BufEnter *.h  setlocal tabstop=3
+  au BufEnter *.h  setlocal shiftwidth=3
+  au BufEnter *.cpp  setlocal tabstop=3
+  au BufEnter *.cpp  setlocal shiftwidth=3
+endif
 
 set ai "Autoindent
 set si "Smartindent
@@ -118,7 +128,7 @@ set listchars+=precedes:<,extends:>
 
 set formatoptions+=w
 set tw=80
-" Special for Verilog: Kollmorgen coding standard doesn't really fit to 80 
+" Special for Verilog: Work coding standard doesn't really fit to 80 
 " characters per line. Let's try 110, and I'll try to stick to 80 at home.
 au BufEnter *.v  setlocal tw=80
 au BufEnter *.sv  setlocal tw=80
@@ -234,6 +244,12 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin-specific stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Markdown Configuration
+let g:vim_markdown_folding_disabled=1
+
+"Syntastic Settings
+let g:syntastic_verilog_checkers = []
 
 " Indent-Guides Settings
 let g:indent_guides_auto_colors = 0

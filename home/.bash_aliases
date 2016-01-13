@@ -16,6 +16,16 @@ alias up9='cd ../../../../../../../../..'
 
 source ~/.homesick/repos/homeshick/homeshick.sh
 
+function vdecompile()
+{
+  netgen -ofmt verilog ${1}
+}
+
+function 7ztargz()
+{
+  7z x -so "${2}" | 7z ${1} -si -ttar
+}
+
 function displayattach()
 {
   xrandr --output LVDS1 --auto \
