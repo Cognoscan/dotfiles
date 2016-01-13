@@ -1,0 +1,15 @@
+snippet always "Synchronous Clock Block" b
+always @(posedge clk) begin
+	if (rst) begin
+	end
+	else begin
+	end
+end
+endsnippet
+
+snippet "if (" "TRUE/FALSE Check" b
+if ($1 != "FALSE" && $1 != "TRUE") begin
+	$display("Attribute Syntax Error : The Attribute $1 on adder_subtractor instance %m is set to %s.  Legal values for this attribute are TRUE or FALSE.", $1);
+	$finish();
+end
+endsnippet
