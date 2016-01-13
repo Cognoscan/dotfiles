@@ -46,6 +46,11 @@ function md5sumdir()
     #| awk '{print $1}' | sort | md5sumdir
 }
 
+function deadlinks()
+{
+  find "${1}" -type l -print0 | xargs -r0 file | grep "broken symbolic" | sed -e 's/^\|: *broken symbolic.*$/"/g'
+}
+
 function pdfpextr()
 {
     # this function uses 3 arguments:
