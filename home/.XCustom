@@ -1,0 +1,36 @@
+*customization: -color
+xterm*faceName: Inconsolata\ for\ Powerline-10
+xterm*faceNameDoublesize: IPAMonaMincho
+xterm*faceSize: 10
+
+xterm*termName: xterm-256color
+
+uxterm*faceName: Inconsolata\ for\ Powerline-10
+uxterm*faceNameDoublesize: IPAMonaMincho
+uxterm*faceSize: 10
+
+URxvt.scrollBar: false
+urxvt*font: xft: Droid\ Sans\ Mono:pixelsize=14
+
+!Example Config
+!*background: rgb:22/22/22
+!*foreground: rgb:e8/e9/ca
+!xterm*color0:    rgb:22/22/22
+!xterm*color1:    rgb:8b/3e/2f
+!xterm*color2:    rgb:52/6f/33
+!xterm*color3:    rgb:66/58/47
+!xterm*color4:    rgb:4a/70/8b
+!xterm*color5:    rgb:7a/37/8b
+!xterm*color6:    rgb:52/8b/8b
+!xterm*color7:    rgb:99/99/99
+!xterm*color8:    rgb:4c/4c/4c
+!xterm*color9:    rgb:d7/5f/00
+!xterm*color10:   rgb:ce/e3/18
+!xterm*color11:   rgb:ee/e6/85
+!xterm*color12:   rgb:9a/c0/cd
+!xterm*color13:   rgb:9f/79/ee
+!xterm*color14:   rgb:79/cd/cd
+!xterm*color15:   rgb:e8/e9/ca
+
+
+

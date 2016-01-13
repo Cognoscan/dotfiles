@@ -13,8 +13,6 @@ alias up6='cd ../../../../../..'
 alias up7='cd ../../../../../../..'
 alias up8='cd ../../../../../../../..'
 alias up9='cd ../../../../../../../../..'
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -lh'
 
 source ~/.homesick/repos/homeshick/homeshick.sh
 
@@ -22,14 +20,14 @@ function displayattach()
 {
   xrandr --output LVDS1 --auto \
          --output VGA1 --auto --left-of LVDS1 \
-         --output DVI-1-${1} --auto --right-of LVDS1
+         --output DVI-${1}-${2} --auto --right-of LVDS1
 }
 
 function displaydetach()
 {
   xrandr --output LVDS1 --auto \
          --output VGA1 --off \
-         --output DVI-1-${1} --off
+         --output DVI-${1}-${2} --off
 }
 
 function md5sumdir()

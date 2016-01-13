@@ -28,3 +28,9 @@
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "home/.vim/bundle/neocomplete"]
+	path = home/.vim/bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "home/.vim/bundle/ultisnips"]
+	path = home/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git

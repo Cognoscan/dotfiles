@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- 
+
 let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 
 " Stuff about 
@@ -11,10 +11,8 @@ let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 " Set up Regex List
 source ~/.regexlist.vim
 
-set clipboard=unnamed
-
 " Global clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Turn off backup files, which clutter things up in Windows
 set nobackup
@@ -121,9 +119,9 @@ set listchars+=precedes:<,extends:>
 set formatoptions+=w
 set tw=80
 " Special for Verilog: Kollmorgen coding standard doesn't really fit to 80 
-" characters per line. Let's try 110
-au BufEnter *.v  setlocal tw=110
-au BufEnter *.sv  setlocal tw=110
+" characters per line. Let's try 110, and I'll try to stick to 80 at home.
+au BufEnter *.v  setlocal tw=80
+au BufEnter *.sv  setlocal tw=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode related
@@ -177,6 +175,7 @@ nmap t <Plug>(easymotion-t2)
 au BufEnter *.v vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\)*\s*#\1.#g<CR>
 au BufEnter *.v vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
 au BufEnter *.v vmap <leader>c :Tabularize ////<<CR>
+au BufEnter *.v vmap <leader>v :Tabularize /\/\/<CR>
 au BufEnter *.v vmap <leader>e :Tabularize /<=<CR>
 au BufEnter *.v vmap <leader>r :Tabularize /=<CR>
 " Repeat for System Verilog
@@ -247,11 +246,18 @@ let g:EasyMotion_smartcase = 1
 " Supertab Settings
 let g:SupertabNoCompleteAfter = ['^', '\s', '\W']
 
+let g:neocomplete#enable_at_startup = 1 
+
 " Airline Settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 set laststatus=2
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Taglist custom VHDL settings line
 let tlist_vhdl_settings = 'vhdl;d:package;b:packagebody;a:architecture;e:entity;p:process;f:function;P:procedure;t:type;c:constant;s:signal;i:instance'
@@ -260,5 +266,4 @@ let tlist_vhdl_settings = 'vhdl;d:package;b:packagebody;a:architecture;e:entity;
 autocmd vimenter * if !argc() | NERDTree | endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 
