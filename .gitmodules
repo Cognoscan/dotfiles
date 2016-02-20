@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "home/.vim/bundle/vim-opencl"]
+	path = home/.vim/bundle/vim-opencl
+	url = git://github.com/petRUShka/vim-opencl.git
