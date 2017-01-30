@@ -16,6 +16,12 @@ if [ -d ~/bin ]; then
   export PATH
 fi
 
+# Add Cargo (from Rust) to PATH if directory exists
+if [ -d ~/.cargo/bin ]; then
+  PATH=~/.cargo/bin:$PATH
+  export PATH
+fi
+
 # Add local man pages to MANPATH is directory exists
 if [ -d ~/share/man ]; then
   MANPATH=~/share/man:$MANPATH

@@ -15,6 +15,8 @@ let g:powerline_pycmd="py3"
 "setlocal errorformat=**\ Error:\ %f(%l):\ %m 
 
 " Set up Regex List
+" Use <C-r>=[REGEX NAME] to insert a regex
+" Use <C-r>=/ to insert the last search term
 source ~/.regexlist.vim
 
 " Global clipboard
@@ -90,6 +92,8 @@ hi Cursor cterm=NONE ctermfg=0 ctermbg=7
 hi CursorIM cterm=NONE ctermfg=0 ctermbg=7
 hi Visual ctermbg=8
 
+"colorscheme inkpot
+
 if has("gui_running")
   set guioptions-=T
   set guioptions+=e
@@ -149,7 +153,6 @@ au BufEnter *.sv  setlocal tw=80
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -199,6 +202,7 @@ au BufEnter *.v vmap <leader>r :Tabularize /=<CR>
 au BufEnter *.sv vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\)*\s*#\1.#g<CR>
 au BufEnter *.sv vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
 au BufEnter *.sv vmap <leader>c :Tabularize ////<<CR>
+au BufEnter *.sv vmap <leader>v :Tabularize /\/\/<CR>
 au BufEnter *.sv vmap <leader>e :Tabularize /<=<CR>
 au BufEnter *.sv vmap <leader>r :Tabularize /=<CR>
 
@@ -214,6 +218,13 @@ au BufEnter *.vhd vmap <leader>d :Tabularize /:<CR>
 
 " compile with multimarkdown
 "map <leader>m :w <bar> !multimarkdown -b %:t<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Special Macros
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Macro for reformatting Verilog instantiated modules that were on a single line
+let @q = 'V:s/), /),\r    /g$hi%a=}}'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Special functions

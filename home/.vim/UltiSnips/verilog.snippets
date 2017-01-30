@@ -1,8 +1,32 @@
-snippet always "Synchronous Clock Block" b
+snippet alsync "Synchronous Clock Block" b
 always @(posedge clk) begin
 	if (rst) begin
 	end
 	else begin
+	end
+end
+endsnippet
+
+snippet alasync "Clock Block w/ high asynchronous reset" b
+always @(posedge clk or posedge reset)
+begin
+	if (reset)
+	begin
+	end
+	else 
+	begin
+	end
+end
+endsnippet
+
+snippet alasyncn "Clock Block w/ low asynchronous reset" b
+always @(posedge clk or negedge nrst)
+begin
+	if (!nrst)
+	begin
+	end
+	else 
+	begin
 	end
 end
 endsnippet

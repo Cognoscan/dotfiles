@@ -16,6 +16,7 @@ alias f='feh'
 alias f2='feh *.{jpg,png,gif}'
 
 alias redlocal='redshift -l 42.76:-71.44'
+alias vimdif='vimdiff'
 
 alias feh2='feh *.{jpg,png,gif}'
 
