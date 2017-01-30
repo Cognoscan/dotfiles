@@ -134,6 +134,10 @@ alias l='ls -XCF --color=auto --group-directories-first'
 alias mv='mv -i'
 alias cp='cp -i'
 
+#use ctl keys to move forward and back in words
+bind '"\eOC":forward-word'
+bind '"\eOD":backward-word'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

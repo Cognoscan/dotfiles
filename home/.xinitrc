@@ -27,6 +27,11 @@ start-pulseaudio-x11
 
 #wmname LG3D &
 
+uxterm &
+firefox &
+pavucontrol &
+thunderbird &
+
 #ssh-agent ~/scripts/startdwm.sh
 #ssh-agent ~/scripts/start_xmonad.sh
 #ssh-agent ~/scripts/start_i3.sh

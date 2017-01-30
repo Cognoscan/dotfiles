@@ -1,5 +1,22 @@
 #!/bin/bash
 
+function cfind ()
+{
+  grep -Ri --include="*.c" --include "*.cpp" --include "*.h" -e "${1}" ./
+}
+
+function vfind ()
+{
+  grep -Ri --include="*.v" --include "*.sv" --include "*.h" --include "*.svh" -e "${1}" ./
+}
+
+alias v='vim'
+alias vd='vimdiff'
+alias f='feh'
+alias f2='feh *.{jpg,png,gif}'
+
+alias redlocal='redshift -l 42.76:-71.44'
+
 alias feh2='feh *.{jpg,png,gif}'
 
 alias dl='du -ch --max-depth=1'

@@ -1,12 +1,22 @@
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+xterm*locale: true
+
 *customization: -color
 xterm*faceName: Inconsolata\ for\ Powerline-10
-xterm*faceNameDoublesize: IPAMonaMincho
+xterm*faceNameDoublesize: IPAMincho
 xterm*faceSize: 10
 
 xterm*termName: xterm-256color
 
 uxterm*faceName: Inconsolata\ for\ Powerline-10
-uxterm*faceNameDoublesize: IPAMonaMincho
+uxterm*faceNameDoublesize: IPAMincho
 uxterm*faceSize: 10
 
 URxvt.scrollBar: false

@@ -8,6 +8,8 @@ let computer="work"
 
 let $PYTHONPATH="/usr/lib/python3.4/site-packages"
 
+let g:powerline_pycmd="py3"
+
 " Stuff about 
 "setlocal makeprg=vlib\ work\;\ MODELSIM=$HOME/modelsim.ini\ vcom\ %
 "setlocal errorformat=**\ Error:\ %f(%l):\ %m 
@@ -77,10 +79,16 @@ set tm=500
 " Colors and Fonts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set background=dark
+colorscheme default
+
 " Enable syntax highlighting
 syntax enable
 
-set background=dark
+hi Search cterm=NONE ctermfg=0 ctermbg=11
+hi Cursor cterm=NONE ctermfg=0 ctermbg=7
+hi CursorIM cterm=NONE ctermfg=0 ctermbg=7
+hi Visual ctermbg=8
 
 if has("gui_running")
   set guioptions-=T
@@ -94,6 +102,7 @@ set encoding=utf8
 
 " Unix is standard file type
 set ffs=unix,dos,mac
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,8 +149,6 @@ au BufEnter *.sv  setlocal tw=80
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
-
-colorscheme default
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mappings
@@ -194,6 +201,13 @@ au BufEnter *.sv vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///
 au BufEnter *.sv vmap <leader>c :Tabularize ////<<CR>
 au BufEnter *.sv vmap <leader>e :Tabularize /<=<CR>
 au BufEnter *.sv vmap <leader>r :Tabularize /=<CR>
+
+" Useful Visual mode shortcuts for VHDL
+au BufEnter *.vhd vmap <leader>r :Tabularize /=><CR>
+au BufEnter *.vhd vmap <leader>e :Tabularize /<=<CR>
+au BufEnter *.vhd vmap <leader>c :Tabularize /--!<CR>
+au BufEnter *.vhd vmap <leader>v :Tabularize /--<CR>
+au BufEnter *.vhd vmap <leader>d :Tabularize /:<CR>
 
 " update with make
 "map <leader>u :w <bar> !make <CR>
@@ -253,7 +267,7 @@ let g:syntastic_verilog_checkers = []
 
 " Indent-Guides Settings
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 
 " Easymotion Settings
