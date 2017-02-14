@@ -6,7 +6,6 @@
 xterm*background: #17181a
 xterm*foreground: #abacae
 xterm*cursorColor: #abacae
-
 xterm*color0: #17181a
 xterm*color1: #983327
 xterm*color2: #284f28
@@ -24,4 +23,22 @@ xterm*color13: #d3d3d3
 xterm*color14: #425b62
 xterm*color15: #dddddd
 
-
+URxvt.background: #17181a
+URxvt.foreground: #abacae
+URxvt.cursorColor: #abacae
+URxvt.color0: #17181a
+URxvt.color1: #983327
+URxvt.color2: #284f28
+URxvt.color3: #a36028
+URxvt.color4: #3c3c49
+URxvt.color5: #ffffff
+URxvt.color6: #3d4b58
+URxvt.color7: #9a9a9a
+URxvt.color8: #3a3a3a
+URxvt.color9: #a3443a
+URxvt.color10: #526130
+URxvt.color11: #a9854f
+URxvt.color12: #97979c
+URxvt.color13: #d3d3d3
+URxvt.color14: #425b62
+URxvt.color15: #dddddd

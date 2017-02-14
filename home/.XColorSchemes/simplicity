@@ -18,3 +18,23 @@ xterm*color6:  #BE926B
 xterm*color14: #BE926B
 xterm*color7:  #F4F4F2
 xterm*color15: #F4F4F2
+
+URxvt.background: #1F1F22
+URxvt.foreground: #F3F3F3
+URxvt.cursorColor: #F3F3F3
+URxvt.color0:  #333333
+URxvt.color8:  #333333
+URxvt.color1:  #BF5C56
+URxvt.color9:  #BF5C56
+URxvt.color2:  #97B19C
+URxvt.color10: #97B19C
+URxvt.color3:  #D7BD8A
+URxvt.color11: #D7BD8A
+URxvt.color4:  #545F72
+URxvt.color12: #545f72
+URxvt.color5:  #DD949A
+URxvt.color13: #DD949A
+URxvt.color6:  #BE926B
+URxvt.color14: #BE926B
+URxvt.color7:  #F4F4F2
+URxvt.color15: #F4F4F2
