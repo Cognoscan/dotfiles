@@ -24,7 +24,7 @@ set $WS9 9 九
 set $WS0 10 十
 
 # Window Title Font
-font pango:monospace 22
+font pango:monospace 11
 
 new_window pixel
 new_float pixel
@@ -37,6 +37,7 @@ floating_modifier $mod
 
 # start a terminal - originally defaulted to i3-sensible-terminal
 bindsym $mod+Shift+Return exec urxvt
+bindsym $mod+Shift+d exec "urxvt -title 'Python Calc' -e python"
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -136,6 +137,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
+for_window [title="Python Calc"] floating enable
 #for_window [instance="radio|disks|qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|"] floating enable
 
 # Assign programs to default workspaces
@@ -200,5 +202,5 @@ bar {
         position                top
         status_command          LC_TIME=ja_JP.utf8 i3status -c ~/.config/i3status/config 
         strip_workspace_numbers yes
-        font                    pango:Droid Sans Mono, Icons 22
+        font                    pango:Droid Sans Mono, Icons 11
 }

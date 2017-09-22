@@ -92,7 +92,10 @@ hi Cursor cterm=NONE ctermfg=0 ctermbg=7
 hi CursorIM cterm=NONE ctermfg=0 ctermbg=7
 hi Visual ctermbg=8
 
-"colorscheme inkpot
+" Inkpot is more reliably colored for work computer
+if computer == "work"
+  colorscheme inkpot
+endif
 
 if has("gui_running")
   set guioptions-=T
@@ -106,6 +109,10 @@ set encoding=utf8
 
 " Unix is standard file type
 set ffs=unix,dos,mac
+" But for work, dos is standard file type
+if computer == "work"
+  set ffs=dos,unix,mac
+endif
 
 
 

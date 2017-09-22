@@ -8,7 +8,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 xrdb -merge .XCustom
-xrdb -merge ~/.XColorSchemes/hexrainbow &
+xrdb -merge ~/.XColorSchemes/simplicity &
 xset -b &
 xmodmap ~/.xmodmaprc &
 redlocal &
