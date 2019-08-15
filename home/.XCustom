@@ -21,11 +21,12 @@ uxterm*faceSize: 10
 
 URxvt.scrollBar: false
 
-urxvt*font:           xft:Inconsolata for Powerline:size=10,             xft:IPAMincho:size=10,             xft:Droid Sans Fallback:size=10
-urxvt*imfont:         xft:Inconsolata for Powerline:size=10,             xft:IPAMincho:size=10,             xft:Droid Sans Fallback:size=10
-urxvt*boldFont:       xft:Inconsolata for Powerline:bold:size=10,        xft:IPAMincho:bold:size=10,        xft:Droid Sans Fallback:bold:size=10
-urxvt*italicFont:     xft:Inconsolata for Powerline:italic:size=10,      xft:IPAMincho:italic:size=10,      xft:Droid Sans Fallback:italic:size=10
-urxvt*boldItalicFont: xft:Inconsolata for Powerline:bold:italic:size=10, xft:IPAMincho:bold:italic:size=10, xft:Droid Sans Fallback:bold:italic:size=10
+urxvt*skipBuiltinGlyphs: true
+urxvt*font:           xft:Inconsolata\ for\ Powerline:size=10,             xft:IPAMincho:size=10,             xft:Droid Sans Fallback:size=10
+urxvt*imfont:         xft:Inconsolata\ for\ Powerline:size=10,             xft:IPAMincho:size=10,             xft:Droid Sans Fallback:size=10
+urxvt*boldFont:       xft:Inconsolata\ for\ Powerline:bold:size=10,        xft:IPAMincho:bold:size=10,        xft:Droid Sans Fallback:bold:size=10
+urxvt*italicFont:     xft:Inconsolata\ for\ Powerline:italic:size=10,      xft:IPAMincho:italic:size=10,      xft:Droid Sans Fallback:italic:size=10
+urxvt*boldItalicFont: xft:Inconsolata\ for\ Powerline:bold:italic:size=10, xft:IPAMincho:bold:italic:size=10, xft:Droid Sans Fallback:bold:italic:size=10
 
 !Example Config
 !*background: rgb:22/22/22

@@ -10,6 +10,11 @@ function vfind ()
   grep -Ri --include="*.v" --include "*.sv" --include "*.h" --include "*.svh" -e "${1}" ./
 }
 
+function rfind ()
+{
+  grep -Ri --include="*.rs" -e "${1}" ./
+}
+
 alias v='vim'
 alias vd='vimdiff'
 alias f='feh'
