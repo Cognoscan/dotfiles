@@ -1,6 +1,6 @@
 "Define which computer we're on
-let computer="work"
-"let computer="home"
+"let computer="work"
+let computer="home"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -199,14 +199,14 @@ nmap ss <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
 " Useful Visual mode shortcuts for Verilog
-au BufEnter *.v vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\)*\s*#\1.#g<CR>
+au BufEnter *.v vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\\|logic\\|uwire\)*\s*#\1.#g<CR>
 au BufEnter *.v vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
 au BufEnter *.v vmap <leader>c :Tabularize ////<<CR>
 au BufEnter *.v vmap <leader>v :Tabularize /\/\/<CR>
 au BufEnter *.v vmap <leader>e :Tabularize /<=<CR>
 au BufEnter *.v vmap <leader>r :Tabularize /=<CR>
 " Repeat for System Verilog
-au BufEnter *.sv vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\)*\s*#\1.#g<CR>
+au BufEnter *.sv vmap <leader>d :s#^\(\s\+\)\(input\\|output\\|inout\)\s\+\(wire\\|reg\\|logic\\|uwire\)*\s*#\1.#g<CR>
 au BufEnter *.sv vmap <leader>f :s#\(\[\S\+\]\) \+\(\w\+,\? *\)\(///< \)*#\2 ///< \1 #g<CR>
 au BufEnter *.sv vmap <leader>c :Tabularize ////<<CR>
 au BufEnter *.sv vmap <leader>v :Tabularize /\/\/<CR>

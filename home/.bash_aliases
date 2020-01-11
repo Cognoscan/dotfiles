@@ -10,6 +10,11 @@ function vfind ()
   grep -Ri --include="*.v" --include "*.sv" --include "*.h" --include "*.svh" -e "${1}" ./
 }
 
+function rfind ()
+{
+  grep -Ri --include="*.rs" -e "${1}" ./
+}
+
 alias v='vim'
 alias vd='vimdiff'
 alias f='feh'
@@ -17,9 +22,11 @@ alias f2='feh *.{jpg,png,gif}'
 
 alias redlocal='redshift -l 42.76:-71.44'
 alias vimdif='vimdiff'
+alias ping='prettyping --nolegend'
 
 alias feh2='feh *.{jpg,png,gif}'
 
+alias di='ncdu --color dark -rr -x --exclude .git'
 alias dl='du -ch --max-depth=1'
 alias cu='cd ..'
 alias up='cd ..'

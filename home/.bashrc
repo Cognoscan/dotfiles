@@ -16,6 +16,12 @@ if [ -d ~/bin ]; then
   export PATH
 fi
 
+# Add hidden local programs to PATH if directory exists
+if [ -d ~/.local/bin ]; then
+  PATH=~/.local/bin:$PATH
+  export PATH
+fi
+
 # Add Cargo (from Rust) to PATH if directory exists
 if [ -d ~/.cargo/bin ]; then
   PATH=~/.cargo/bin:$PATH
@@ -169,3 +175,7 @@ if [ "$COMPTYPE" != "windows" ]; then
 fi
 
 #source /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
+
+export ALTERAOCLSDKROOT="/home/scott/intelFPGA/16.1/hld"
+
+export QSYS_ROOTDIR="/home/scott/build/quartus-lite/pkg/quartus-lite//opt/altera/quartus/sopc_builder/bin"
