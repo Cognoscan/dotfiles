@@ -6,7 +6,7 @@ let computer="home"
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let $PYTHONPATH="/usr/lib/python3.4/site-packages"
+let $PYTHONPATH="/usr/lib/python3.6/site-packages"
 
 let g:powerline_pycmd="py3"
 
@@ -231,7 +231,7 @@ au BufEnter *.vhd vmap <leader>d :Tabularize /:<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Macro for reformatting Verilog instantiated modules that were on a single line
-let @q = 'V:s/), /),\r    /g$hi%a=}}'
+let @q = 'V:s/), /),\r    /g $hi %a =}}'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Special functions
