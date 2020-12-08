@@ -10,9 +10,6 @@
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "home/.vim/bundle/table-mode"]
-	path = home/.vim/bundle/table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode.git
 [submodule "home/.vim/bundle/vim-openscad"]
 	path = home/.vim/bundle/vim-openscad
 	url = https://github.com/armyofevilrobots/vim-openscad.git
@@ -28,9 +25,6 @@
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "home/.vim/bundle/neocomplete"]
-	path = home/.vim/bundle/neocomplete
-	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
@@ -40,3 +34,6 @@
 [submodule "home/.vim/bundle/rust"]
 	path = home/.vim/bundle/rust
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "home/.vim/bundle/coc.nvim"]
+	path = home/.vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
