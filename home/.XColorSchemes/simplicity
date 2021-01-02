@@ -1,5 +1,6 @@
 ! Simplicity
-*background: #1F1F22
+!*background: #1F1F22
+*background: #000000
 *foreground: #F3F3F3
 xterm*cursorColor: #F3F3F3
 xterm*color0:  #333333
@@ -19,7 +20,8 @@ xterm*color14: #BE926B
 xterm*color7:  #F4F4F2
 xterm*color15: #F4F4F2
 
-URxvt.background: #1F1F22
+!URxvt.background: #1F1F22
+URxvt.background: #000000
 URxvt.foreground: #F3F3F3
 URxvt.cursorColor: #F3F3F3
 URxvt.color0:  #333333

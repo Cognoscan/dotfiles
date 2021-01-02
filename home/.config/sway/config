@@ -39,12 +39,10 @@ set $WS8 8
 set $WS9 9
 set $WS0 10
 
+default_border pixel
 
 # Window Title Font
-font pango:monospace 8
-
-new_window pixel
-new_float pixel
+font pango:monospace 10
 
 hide_edge_borders both
 workspace_auto_back_and_forth yes
@@ -141,13 +139,17 @@ bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS1
 
 # Media Buttons
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+# Brightness Buttons
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d intel_backlight s +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d intel_backlight s 5%-
 
 # Floating Windows
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
-for_window [window_type="dialog|menu"] floating enable
+#for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
 #for_window [instance="radio|disks|qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|"] floating enable
 
@@ -201,6 +203,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+output eDP-1 res 3840x2160 scale 2
+input 1739:31251:DLL06E4:01_06CB:7A13_Touchpad tap enabled
+
 bindsym $mod+r mode "resize"
 
 bindsym $mod+x exec "i3lock -c 111111"
@@ -213,5 +218,5 @@ bar {
         status_command          LC_TIME=ja_JP.utf8 i3status -c ~/.config/i3status/config 
         tray_output             primary
         strip_workspace_numbers yes
-        font                    pango:Droid Sans Mono, Icons 8
+        font                    pango:Droid Sans Mono, Icons 10
 }

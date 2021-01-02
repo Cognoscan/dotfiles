@@ -82,7 +82,8 @@ set tm=500
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set background=dark
-colorscheme default
+"colorscheme default
+colorscheme inkpot
 
 " Enable syntax highlighting
 syntax enable
@@ -277,8 +278,14 @@ endfunction
 " Plugin-specific stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Markdown Configuration
+"t Markdown Configuration
+let g:markdown_syntax_conceal = 0
+let g:markdown_minlines = 100
+let g:markdown_fenced_languages = ['html', 'python', 'json', 'rust', 'bash=sh']
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_syntax_conceal = 0
+let g:vim_markdown_minlines = 100
+let g:vim_markdown_fenced_languages = ['html', 'python', 'json', 'rust', 'bash=sh']
 
 "Syntastic Settings
 let g:syntastic_verilog_checkers = []
@@ -292,9 +299,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 let g:EasyMotion_smartcase = 1
 
 " Supertab Settings
-let g:SupertabNoCompleteAfter = ['^', '\s', '\W']
+" let g:SupertabNoCompleteAfter = ['^', '\s', '\W']
 
-let g:neocomplete#enable_at_startup = 1 
+" let g:neocomplete#enable_at_startup = 1 
 
 " Airline Settings
 let g:airline_powerline_fonts = 1
@@ -303,9 +310,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 set laststatus=2
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Taglist custom VHDL settings line
 let tlist_vhdl_settings = 'vhdl;d:package;b:packagebody;a:architecture;e:entity;p:process;f:function;P:procedure;t:type;c:constant;s:signal;i:instance'
