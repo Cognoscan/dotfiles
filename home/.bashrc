@@ -185,3 +185,4 @@ fi
 export ALTERAOCLSDKROOT="/home/scott/intelFPGA/16.1/hld"
 
 export QSYS_ROOTDIR="/home/scott/build/quartus-lite/pkg/quartus-lite//opt/altera/quartus/sopc_builder/bin"
+. "$HOME/.cargo/env"

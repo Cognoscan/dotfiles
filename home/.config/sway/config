@@ -2,16 +2,16 @@
 set $mod Mod4
 
 # Workspace Names/Icons
-set $WS1 1 一
-set $WS2 2 二
-set $WS3 3 三
-set $WS4 4 四
-set $WS5 5 五
-set $WS6 6 六
-set $WS7 7 七
-set $WS8 8 八
-set $WS9 9 九
-set $WS0 10 十
+set $WS1 一
+set $WS2 二
+set $WS3 三
+set $WS4 四
+set $WS5 五
+set $WS6 六
+set $WS7 七
+set $WS8 八
+set $WS9 九
+set $WS0 十
 #set $WS1 1
 #set $WS2 2
 #set $WS3 3
@@ -147,9 +147,6 @@ bindsym XF86MonBrightnessUp exec brightnessctl -c backlight s +5%
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight s 5%-
 bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Shift+s exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/screenshots/$(date +"%Y%m%d_%H%M%S_grim.png")
-
-# Take a Screenshot
-bindsym $mod+s exec "import ~/Pictures/shots/$(date +%F_%H%M%S).png"
 
 # reload the configuration file
 bindsym $mod+Shift+q reload
