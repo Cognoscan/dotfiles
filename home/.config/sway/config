@@ -1,4 +1,6 @@
 
+output eDP-2 scale 1
+
 set $mod Mod4
 
 # Workspace Names/Icons
@@ -36,7 +38,7 @@ floating_modifier $mod
 set $term alacritty
 set $menu bemenu-run | xargs swaymsg exec --
 
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+exec swww-daemon
 
 exec swayidle -w \
 	timeout 3595 'swaylock -f -c 000000' \
@@ -140,6 +142,10 @@ bindsym $mod+Shift+0 move container to workspace $WS1
 
 # Control keybinds
 bindsym $mod+x exec swaylock -f -c 000000
+bindsym $mod+c exec swayidle -w \
+	timeout 3595 'swaylock -f -c 000000' \
+	timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	before-sleep 'swaylock -f -c 000000'
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -183,10 +189,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-	status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+  status_command /home/scott/scripts/swaybar.sh
 	colors {
 		statusline #ffffff
 		background #323232
 		inactive_workspace #32323200 #32323200 #5c5c5c
 	}
 }
+
+include /etc/sway/config.d/*

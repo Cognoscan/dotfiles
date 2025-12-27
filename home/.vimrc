@@ -125,21 +125,15 @@ set expandtab
 
 set smarttab
 
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 " Special for Verilog: Work coding standard is to use 4 spaces / tab
 au BufEnter *.v  setlocal tabstop=4
 au BufEnter *.v  setlocal shiftwidth=4
 au BufEnter *.sv  setlocal tabstop=4
 au BufEnter *.sv  setlocal shiftwidth=4
 
-if computer == "work"
-  " Special for C++: Work coding standard is to use 3 spaces / tab
-  au BufEnter *.h  setlocal tabstop=3
-  au BufEnter *.h  setlocal shiftwidth=3
-  au BufEnter *.cpp  setlocal tabstop=3
-  au BufEnter *.cpp  setlocal shiftwidth=3
-endif
+
 
 set ai "Autoindent
 set si "Smartindent
@@ -149,10 +143,10 @@ set listchars+=precedes:<,extends:>
 
 set formatoptions+=w
 set tw=80
-" Special for Verilog: Work coding standard doesn't really fit to 80 
-" characters per line. Let's try 110, and I'll try to stick to 80 at home.
 au BufEnter *.v  setlocal tw=80
 au BufEnter *.sv  setlocal tw=80
+
+au BufEnter *.toml  setlocal tw=400
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode related
@@ -322,3 +316,15 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+let g:UltiSnipsExpandTrigger = "c-l"

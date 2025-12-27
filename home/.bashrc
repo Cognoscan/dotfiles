@@ -136,7 +136,6 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || test -r /etc/DIR_COLORS && eval "$(dircolors -b /etc/DIR_COLORS)" || eval "$(dircolors)"
-    alias ls='ls -X --color=auto --group-directories-first'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -146,9 +145,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -XalhF --color=auto --group-directories-first'
-alias la='ls -XA --color=auto --group-directories-first'
-alias l='ls -XCF --color=auto --group-directories-first'
+alias ls='lsd'
+alias ll='lsd -l'
+alias la='lsd -la'
+alias l='lsd'
+alias tree='lsd --tree'
 alias mv='mv -i'
 alias cp='cp -i'
 
@@ -186,3 +187,18 @@ export ALTERAOCLSDKROOT="/home/scott/intelFPGA/16.1/hld"
 
 export QSYS_ROOTDIR="/home/scott/build/quartus-lite/pkg/quartus-lite//opt/altera/quartus/sopc_builder/bin"
 . "$HOME/.cargo/env"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/scott/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/scott/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
