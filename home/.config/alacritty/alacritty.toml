@@ -1,0 +1,18 @@
+[font]
+size = 14.0
+
+[font.bold]
+family = "FiraCodeNerdFontMono"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCodeNerdFontMono"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCodeNerdFontMono"
+style = "Italic"
+
+[font.normal]
+family = "FiraCodeNerdFontMono"
+style = "Regular"
